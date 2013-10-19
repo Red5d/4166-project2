@@ -1,6 +1,6 @@
 package a1.servlets;
 
-//import a1.javaclasses.*;
+import a1.javaclasses.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,6 +46,15 @@ public class LoginServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String passWord = request.getParameter("passWord");
 		
+		Users check = new Users();
+		
+		check.check();
+		
+		//Users userStuff = new Users(userName,passWord,"hello@gmail.com", "date");
+		
+		//userStuff.Users();
+		
+		/*
 		Properties p = new Properties();
 		FileInputStream fis = null;
 		try {
@@ -90,7 +99,7 @@ public class LoginServlet extends HttpServlet {
 		            e.printStackTrace();
 		        }
 		    }
-		}
+		}*/
 		
 		
 	}

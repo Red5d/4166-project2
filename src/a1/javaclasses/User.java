@@ -17,7 +17,7 @@ public class User {
 		prop = new Properties();
 		try
 			{
-				fis = new FileInputStream("C://Users//Asura//workspace//users.properties");
+				fis = new FileInputStream("insertdirectorypath");
 				prop.load(fis);
 			}
 		
@@ -57,7 +57,7 @@ public void createUser(String user, String password)
 		 
 		 try 
 			 {
-				prop.store(new FileOutputStream("C://Users//Asura//workspace//users.properties"), null);	 
+				prop.store(new FileOutputStream("insertdirectorypath"), null);	 
 				 
 			 }
 		 catch (FileNotFoundException e) 

@@ -32,6 +32,10 @@ input[type=text] { float: up; width: 250px; }
 <form action="RegistrationServlet" method="POST" onsubmit="return passwordCheck()" name="form">
 <label for="enterUsername">Enter a Username:</label><input type="text" name="userName" id="userName"><br />
 <br />
+<label for="enterUsername">Enter your Email:</label><br><input type="text" name="email" id="email"><br />
+<br />
+<label for="enterUsername">Enter your Date of Birth:</label><br><input type="text" name="bDate" id="bDate"><br />
+<br />
 <label for="enterUsername">Enter a Password:</label><br><input type="password" name="passWord" id="passWord"><br />
 <br />
 <label for="enterUsername">Confirm Password:</label><br><input type="password" name="passwordConfirm" id="passwordConfirm"><br />

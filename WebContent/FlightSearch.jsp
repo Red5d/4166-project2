@@ -17,7 +17,7 @@ option { float: up; width: 250px; }
 </head>
 <body>
 <H1>Search for a Flight</H1>
-<form name="input" action="SearchResult.jsp" method="post">
+<form name="input" action="FlightSearchQueryServlet" method="post">
 <label for="source">Source:</label><input type="text" name="source"><br />
 <br />
 <label for="destination">Destination:</label> <input type="text" name="destination"><br />
@@ -50,7 +50,7 @@ option { float: up; width: 250px; }
 <br />
 <br />
 <label for="classType">Class Type:</label><br />
-<select name="class">
+<select name="classType">
 <option value="volvo">Economy</option>
 <option value="saab">Business</option>
 <option value="fiat">First Class</option>

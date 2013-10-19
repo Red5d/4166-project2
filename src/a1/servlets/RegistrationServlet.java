@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import a1.javaclasses.Users;
+
 /**
  * Servlet implementation class RegistrationServlet
  */
@@ -43,7 +45,15 @@ public class RegistrationServlet extends HttpServlet {
 		
 		 String userName = request.getParameter("userName");
 		 String passWord = request.getParameter("passWord");
+		 String email = request.getParameter("email");
+		 String bDate = request.getParameter("bDate");
 		 
+		 Users userD = new Users();
+		 
+		 userD.insert(userName,passWord,email,bDate);
+		 //userD.User(userName,passWord,email,bDate);
+		 
+		/* 
 		 Properties p = new Properties();
 			FileInputStream fis = null;
 			try {
@@ -68,7 +78,7 @@ public class RegistrationServlet extends HttpServlet {
 			            e.printStackTrace();
 			        }
 			    }
-			}
+			}*/
 		 	
 		
 	}
