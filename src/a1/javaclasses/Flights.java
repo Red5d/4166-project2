@@ -10,7 +10,6 @@ public class Flights {
 	private String dateOfTravel;
 	private String numSeats;
 	private String typeOfClass;
-	private int stops;
 	private String arrival;
 	private String departure;
 	private double cost;
@@ -92,7 +91,7 @@ public class Flights {
 	}
 	
 	
-	public void checkFlights(/*String source, String destination, String travelDate, String noOfSeats, String classType*/){
+	public void checkFlights(String source, String destination){
 		/*
 		flightSource = source;
 		flightDestination = destination;
@@ -100,17 +99,15 @@ public class Flights {
 		numSeats = noOfSeats;
 		typeOfClass = classType;
 		*/
-		String SQL = "SELECT * FROM FLIGHTS WHERE SOURCE = " + flightSource;
+		String SQL = "SELECT * FROM FLIGHTS WHERE SOURCE = '" + source + "' AND DESTINATION = '" + destination + "'";
 		ResultSet rs = d.execute(SQL);
 	    try {
 			while (rs.next()) 
 			{
-				this.flightNumber = Integer.parseInt("FLIGHTNUMBER");
-				this.cost = Integer.parseInt(rs.getString("COST"));
-				this.dateOfTravel = rs.getString("FLIGHTDATE");
-				this.arrival = rs.getString("ARRIVAL");
-				this.departure = rs.getString("DEPARTURE");
-				this.stops = Integer.parseInt(rs.getString("STOPS"));
+				flightNumber = Integer.parseInt(rs.getString("FLIGHTNUMBER"));
+				cost = Integer.parseInt(rs.getString("COST"));
+				arrival = rs.getString("ARRIVAL");
+				departure = rs.getString("DEPARTURE");
 			    
 			      
 			}

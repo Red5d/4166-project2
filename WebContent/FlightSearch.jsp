@@ -14,15 +14,26 @@ option { float: up; width: 250px; }
 .clear { clear: both; height: 0; line-height: 0; }
 .floatright { float: right; }
 </style>
+
+<script type="text/javascript">
+
+function postValues() {
+  document.getElementById('travelDatePost').value=document.getElementById('travelDate').value;
+  document.getElementById('input').submit();
+  document.getElementById('otherInput').submit();
+}
+  
+</script>
+
 </head>
 <body>
 <H1>Search for a Flight</H1>
-<form name="input" action="FlightSearchQueryServlet" method="post">
-<label for="source">Source:</label><input type="text" name="source"><br />
+<form id="input" name="input" action="FlightSearchQueryServlet" method="post">
+<label for="source">Source:</label><input type="text" name="source" autofocus><br />
 <br />
 <label for="destination">Destination:</label> <input type="text" name="destination"><br />
 <br />
-<label for="travelDate">Travel Date:</label> <input type="text" name="travelDate"><br />
+<label for="travelDate">Travel Date:</label> <input id="travelDate" type="text" name="travelDate"><br />
 <br />
 <label for="noOfSeats">No. of Seats:</label><br>
 <select name="noOfSeats">
@@ -55,9 +66,14 @@ option { float: up; width: 250px; }
 <option value="saab">Business</option>
 <option value="fiat">First Class</option>
 </select><br /><br /><br />
-<input type="submit" value="Search">
+<input type="button" value="Search" onClick="window.postValues()">
 <input type="button" value="Booking History" onclick="window.location.href='BookingHistory.jsp'">
 
 </form> 
+
+<form id="otherInput" action="SearchResult.jsp" method="post">
+  <input id="travelDatePost" name="travelDate" type="hidden" value="" />
+</form>
+
 </body>
 </html>

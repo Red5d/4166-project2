@@ -46,7 +46,7 @@
 <title>Flight Search Results</title>
 <body>
 <H1>Here are your search results!</H1>
-<jsp:useBean id="pageBean" class="a1.javaclasses.Flights" />
+<jsp:useBean id="pageBean" class="a1.servlets.FlightSearchQueryServlet" />
 <jsp:setProperty name="pageBean" property="*" />
 <table border="1">
 	<tr>

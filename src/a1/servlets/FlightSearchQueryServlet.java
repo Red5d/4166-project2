@@ -44,7 +44,11 @@ public class FlightSearchQueryServlet extends HttpServlet {
 		
 		Flights flight = new Flights(source,destination,travelDate,noOfSeats,classType);
 		
-		flight.checkFlights();
+		flight.checkFlights(source,destination);
+		
+		
+		
+		
 		
 		response.sendRedirect("SearchResult.jsp");
 		

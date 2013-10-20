@@ -41,7 +41,7 @@ public class Users {
 	
 	public void insert()
 	{
-		String SQL = "INSERT INTO USERS VALUES ('" + username + "', '" + password + "', '" + email + "', '"+ dob+ "')";
+		String SQL = "INSERT INTO USERS VALUES ('" + username + "', '" + password + "'" + email + "', '"+ dob+ "')";
 	    d.insert(SQL);
 	}
 
