@@ -12,14 +12,14 @@ public class DBClass {
 	Connection connection;
     Statement stat;
 
-	public DBClass()
+    public DBClass()
 	{
-		this.connName = "wow";
-		this.userName = "wut";
-		this.password = "secret";
-		this.hostName = "nohost";
-		this.port = 8675309;
-		this.SID = "herp";
+		this.connName = "";
+		this.userName = "";
+		this.password = "";
+		this.hostName = "";
+		this.port;
+		this.SID;
 	}
 
 	public DBClass(String pconnName, String puserName, String ppassword, String phostName, int pport, String pSID)
@@ -43,7 +43,7 @@ public class DBClass {
 		}
 		try {
 			//connection = DriverManager.getConnection("jdbc:oracle:thin:@" + this.hostName + ":" + this.port +":"+ this.SID + "," +  this.userName + "," + this.password);
-			connection = DriverManager.getConnection("huh?", "cheese","sweet");
+			connection = DriverManager.getConnection("no", "","");
 			stat = connection.createStatement();
 		} catch (SQLException e) {
 			e.printStackTrace();

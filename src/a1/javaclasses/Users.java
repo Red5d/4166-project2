@@ -39,9 +39,9 @@ public class Users {
 		this.logged_in = check();
 	}
 	
-	public void insert(String userName, String passWord, String email, String dob)
+	public void insert()
 	{
-		String SQL = "INSERT INTO USERS VALUES ('" + userName + "', '" + passWord + "', '" + email + "', '"+ dob+ "')";
+		String SQL = "INSERT INTO USERS VALUES ('" + username + "', '" + password + "', '" + email + "', '"+ dob+ "')";
 	    d.insert(SQL);
 	}
 
@@ -142,4 +142,5 @@ public class Users {
 		}
 		return exists;
 	}
+
 }

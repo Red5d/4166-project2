@@ -48,9 +48,13 @@ public class RegistrationServlet extends HttpServlet {
 		 String email = request.getParameter("email");
 		 String bDate = request.getParameter("bDate");
 		 
-		 Users userD = new Users();
+		 Users userD = new Users(userName,passWord,email,bDate);
 		 
-		 userD.insert(userName,passWord,email,bDate);
+		 userD.insert();
+		 
+		 
+		 
+		
 		 //userD.User(userName,passWord,email,bDate);
 		 
 		/* 

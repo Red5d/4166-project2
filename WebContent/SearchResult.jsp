@@ -46,10 +46,12 @@
 <title>Flight Search Results</title>
 <body>
 <H1>Here are your search results!</H1>
+<jsp:useBean id="pageBean" class="a1.javaclasses.Flights" />
+<jsp:setProperty name="pageBean" property="*" />
 <table border="1">
 	<tr>
 		<td>Flight Number:</td>
-		<td><%= flightNo %></td>
+		<td><jsp:getProperty name="pageBean" property="flightNumber" /></td>
 	</tr>
 	<tr>
 		<td>Flight Date:</td>

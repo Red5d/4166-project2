@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import a1.javaclasses.Flights;
+
 /**
  * Servlet implementation class FlightSearchQueryServlet
  */
@@ -40,8 +42,11 @@ public class FlightSearchQueryServlet extends HttpServlet {
 		String classType = request.getParameter("classType");
 		
 		
+		Flights flight = new Flights(source,destination,travelDate,noOfSeats,classType);
 		
+		flight.checkFlights();
 		
+		response.sendRedirect("SearchResult.jsp");
 		
 	}
 
