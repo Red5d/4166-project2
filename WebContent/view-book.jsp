@@ -20,25 +20,45 @@
 
 	<h1>View And Book Flight</h1>
 	<br>
+	<jsp:useBean id="Flight" class="a1.javaclasses.Flights" scope="session"/>
+	
+	
 	
 	<button onclick="history.back()">Back</button>
 	<button onclick="window.location.replace('FlightSearch.jsp')">Home</button>
 	
 	<br><br>
 	
-	<form action="transaction.jsp" method="post">
+	<form action="ViewAndBookServlet" method="post">
 	<div style="float:left; margin-right:10px">
-	Flight #:<br>
-	Date:<br>
-	Departure Time:<br>
-	Arrival Time:<br>
-	Duration:<br>
-	Aircraft Type:<br>
-	Stops:<br>
-	Cost:<br>
-	Seats:<br>
+	<b>Flight #:</b> <jsp:getProperty name="Flight" property="flightNumber"/><br>
+	<b>Date:</b> <jsp:getProperty name="Flight" property="travelDate"/><br>
+	<b>Departure Time:</b> <jsp:getProperty name="Flight" property="departure"/><br>
+	<b>Arrival Time:</b> <jsp:getProperty name="Flight" property="arrival"/><br>
+	<b>Duration:</b> <jsp:getProperty name="Flight" property="duration"/><br>
+	<b>Aircraft Type:</b> <jsp:getProperty name="Flight" property="aircraft"/><br>
+	<b>Stops:</b> <jsp:getProperty name="Flight" property="stops"/><br>
+	<b>Cost:</b> <jsp:getProperty name="Flight" property="cost"/><br>
+	<b>Seats:</b> <jsp:getProperty name="Flight" property="seatNumber"/> <br>
+	<b>How many seats do you want?:</b> <select name="seatsNeeded">
+  	<option value="1">1</option>
+  	<option value="2">2</option>
+  	<option value="3">3</option>
+  	<option value="4">4</option>
+  	<option value="5">5</option>
+  	<option value="6">6</option>
+  	<option value="7">7</option>
+  	<option value="8">8</option>
+  	<option value="9">9</option>
+  	<option value="10">10</option>
+  	<option value="11">11</option>
+  	<option value="12">12</option>
+  	<option value="13">13</option>
+  	<option value="14">14</option>
+  	<option value="15">15</option>
+</select>
 	</div>
-	
+	<!--  
 	<div style="float:left">
 	<%= request.getParameter("flightNum") %><br>
 	<%= request.getParameter("flightDate") %><br>
@@ -59,7 +79,10 @@
 	<input type="hidden" name="flightStopsNum" value=<%= request.getParameter("stops") %> />
 	<input type="hidden" name="flightCost" value=<%= request.getParameter("cost") %> />
 	<input type="submit" name="bookFlightBtn" value="Select" />
+	-->
+<input type="submit" name="select" value="Select Flight"/>
 	</form>
+	
 	
 </body>
 </html>

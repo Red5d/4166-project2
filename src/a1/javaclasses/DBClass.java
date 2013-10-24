@@ -11,9 +11,10 @@ public class DBClass {
 	String SID;
 	Connection connection;
     Statement stat;
-//wut
-   
-//wut
+    //insert DB connection information between this comment
+    
+	//And this comment
+	
 	public ResultSet execute(String SQL)
 	{
 	    ResultSet rs;
