@@ -1,18 +1,23 @@
 package a1.javaclasses;
 
 import java.sql.*;
+import java.util.HashMap;
+
+
+
 
 public class Flights {
 	DBClass d;
 	private int flightNumber;
 	private String flightSource;
 	private String flightDestination;
-	private String dateOfTravel;
+	private String travelDate;
 	private String numSeats;
 	private String typeOfClass;
 	private String arrival;
 	private String departure;
 	private double cost;
+	private String stops;
 	
 	
 	public Flights(String source, String destination, String travelDate, String noOfSeats, String classType)
@@ -21,7 +26,7 @@ public class Flights {
 		d.connectMeIn();
 		this.flightSource = source;
 		this.flightDestination = destination;
-		this.dateOfTravel = travelDate;
+		this.travelDate = travelDate;
 		this.numSeats = noOfSeats;
 		this.typeOfClass = classType;
 	}
@@ -54,12 +59,12 @@ public class Flights {
 
 	public void setTravelDate(String travelDate)
 	{
-		this.dateOfTravel = travelDate;
+		this.travelDate = travelDate;
 	}
 	
 	public String getTravelDate()
 	{
-		return dateOfTravel;
+		return travelDate;
 	}
 
 	public void setNumOfSeats(String noOfSeats)
@@ -90,8 +95,36 @@ public class Flights {
 		return flightNumber;
 	}
 	
+	public void setCost(double cost){
+		this.cost = cost;
+	}
+	public double getCost(){
+		return cost;
+	}
 	
-	public void checkFlights(String source, String destination){
+	public void setArrival(String arrival){
+		this.arrival = arrival;
+	}
+	public String getArrival(){
+		return arrival;
+	}
+	
+	public void setDeparture(String departure){
+		this.departure = departure;
+	}
+	public String getDeparture(){
+		return departure;
+	}
+	public void setStops(String stop){
+		this.stops = stop;
+	}
+	public String getStops(){
+		return stops;
+	}
+	
+	
+	
+	public void checkFlights(){
 		/*
 		flightSource = source;
 		flightDestination = destination;
@@ -99,22 +132,26 @@ public class Flights {
 		numSeats = noOfSeats;
 		typeOfClass = classType;
 		*/
-		String SQL = "SELECT * FROM FLIGHTS WHERE SOURCE = '" + source + "' AND DESTINATION = '" + destination + "'";
+		String SQL = "SELECT * FROM FLIGHTS WHERE SOURCE = '" + flightSource +"'";
 		ResultSet rs = d.execute(SQL);
 	    try {
 			while (rs.next()) 
 			{
 				flightNumber = Integer.parseInt(rs.getString("FLIGHTNUMBER"));
+				travelDate = rs.getString("TRAVELDATE");
 				cost = Integer.parseInt(rs.getString("COST"));
 				arrival = rs.getString("ARRIVAL");
 				departure = rs.getString("DEPARTURE");
-			    
+				stops = rs.getString("STOPS");
+				
 			      
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
 		
 	public void closeConnection()
 	{

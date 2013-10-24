@@ -97,7 +97,7 @@ public class Users {
 	
 	public boolean check()
 	{
-		String SQL = "SELECT count(*) as cnt FROM users WHERE username = '"+username+"' AND password='"+password+"'";
+		String SQL = "SELECT count(*) FROM USERS WHERE NINER_ID = '"+username+"' AND PASSWORD='"+password+"'";
 		ResultSet rs = d.execute(SQL);
 		try {
 			while (rs.next())
@@ -110,7 +110,7 @@ public class Users {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		SQL = "SELECT * FROM users WHERE username = '"+username+"' AND password='"+password+"'";
+		/*SQL = "SELECT * FROM users WHERE username = '"+username+"' AND password='"+password+"'";
 		ResultSet rs1 = d.execute(SQL);
 	    try {
 			while (rs1.next())
@@ -120,14 +120,14 @@ public class Users {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		}*/
 		return logged_in;
 	}
 
 	public boolean checkUsername()
 	{
 		boolean exists = false;
-		String SQL = "SELECT count(*) as cnt FROM users WHERE username = '"+username+"'";
+		String SQL = "SELECT count(*) FROM USERS WHERE niner_id = '"+username+"'";
 		ResultSet rs = d.execute(SQL);
 		try {
 			while (rs.next())

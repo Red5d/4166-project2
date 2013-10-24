@@ -46,9 +46,21 @@ public class LoginServlet extends HttpServlet {
 		String userName = request.getParameter("userName");
 		String passWord = request.getParameter("passWord");
 		
-		Users check = new Users();
+		Users checkUser = new Users(userName,passWord);
 		
-		check.check();
+		checkUser.check();
+		
+		Boolean loggedIn = checkUser.getLoggedIn();
+		
+		if(loggedIn == true){
+			response.sendRedirect("FlightSearch.jsp");
+		}
+		else{
+			response.sendRedirect("Login.jsp");
+		}
+		
+		//response.sendRedirect("FlightSearch.jsp");
+		
 		
 		//Users userStuff = new Users(userName,passWord,"hello@gmail.com", "date");
 		
