@@ -13,6 +13,8 @@ public class DBClass {
     Statement stat;
     //insert DB connection information between this comment
     
+    
+    
 	//And this comment
 	
 	public ResultSet execute(String SQL)

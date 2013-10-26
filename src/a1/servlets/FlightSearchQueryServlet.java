@@ -53,6 +53,7 @@ public class FlightSearchQueryServlet extends HttpServlet {
 		
 		flight.checkFlights();
 		
+		
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("Flight", flight);

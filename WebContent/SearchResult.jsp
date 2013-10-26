@@ -11,7 +11,8 @@
 <title>Flight Search Results</title>
 <body>
 <H1>Here are your search results!</H1>
-<jsp:useBean id="Flight" class="a1.javaclasses.Flights" scope="session"/>
+<jsp:useBean id="Flight" type="a1.javaclasses.Flights" scope="session"/>
+
 <form action="FlightSearchResultsServlet" method="post">
 <table border="1">
 	<tr>
